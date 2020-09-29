@@ -1,0 +1,188 @@
+{
+    "chart": [
+        {
+            "close": 303.91,
+            "volume": 69015151,
+            "date": "2020-08-26",
+            "label": "Aug 26",
+            "change": 0,
+            "changePercent": 0
+        },
+        {
+            "close": 293.22,
+            "volume": 30301309,
+            "date": "2020-08-27",
+            "label": "Aug 27",
+            "change": -10.69,
+            "changePercent": -3.5175
+        },
+        {
+            "close": 293.66,
+            "volume": 17172415,
+            "date": "2020-08-28",
+            "label": "Aug 28",
+            "change": 0.44,
+            "changePercent": 0.1501
+        },
+        {
+            "close": 293.2,
+            "volume": 17345134,
+            "date": "2020-08-31",
+            "label": "Aug 31",
+            "change": -0.46,
+            "changePercent": -0.1566
+        },
+        {
+            "close": 295.44,
+            "volume": 17320872,
+            "date": "2020-09-01",
+            "label": "Sep 1",
+            "change": 2.24,
+            "changePercent": 0.764
+        },
+        {
+            "close": 302.5,
+            "volume": 24341369,
+            "date": "2020-09-02",
+            "label": "Sep 2",
+            "change": 7.06,
+            "changePercent": 2.3897
+        },
+        {
+            "close": 291.12,
+            "volume": 32294092,
+            "date": "2020-09-03",
+            "label": "Sep 3",
+            "change": -11.38,
+            "changePercent": -3.762
+        },
+        {
+            "close": 282.73,
+            "volume": 30333671,
+            "date": "2020-09-04",
+            "label": "Sep 4",
+            "change": -8.39,
+            "changePercent": -2.882
+        },
+        {
+            "close": 271.16,
+            "volume": 24863997,
+            "date": "2020-09-08",
+            "label": "Sep 8",
+            "change": -11.57,
+            "changePercent": -4.0922
+        },
+        {
+            "close": 273.72,
+            "volume": 22918769,
+            "date": "2020-09-09",
+            "label": "Sep 9",
+            "change": 2.56,
+            "changePercent": 0.9441
+        },
+        {
+            "close": 268.09,
+            "volume": 24814669,
+            "date": "2020-09-10",
+            "label": "Sep 10",
+            "change": -5.63,
+            "changePercent": -2.0568
+        },
+        {
+            "close": 266.61,
+            "volume": 18913883,
+            "date": "2020-09-11",
+            "label": "Sep 11",
+            "change": -1.48,
+            "changePercent": -0.5521
+        },
+        {
+            "close": 266.15,
+            "volume": 24093830,
+            "date": "2020-09-14",
+            "label": "Sep 14",
+            "change": -0.46,
+            "changePercent": -0.1725
+        },
+        {
+            "close": 272.42,
+            "volume": 18478530,
+            "date": "2020-09-15",
+            "label": "Sep 15",
+            "change": 6.27,
+            "changePercent": 2.3558
+        },
+        {
+            "close": 263.52,
+            "volume": 29207594,
+            "date": "2020-09-16",
+            "label": "Sep 16",
+            "change": -8.9,
+            "changePercent": -3.267
+        },
+        {
+            "close": 254.82,
+            "volume": 31281441,
+            "date": "2020-09-17",
+            "label": "Sep 17",
+            "change": -8.7,
+            "changePercent": -3.3015
+        },
+        {
+            "close": 252.53,
+            "volume": 28130767,
+            "date": "2020-09-18",
+            "label": "Sep 18",
+            "change": -2.29,
+            "changePercent": -0.8987
+        },
+        {
+            "close": 248.15,
+            "volume": 24709378,
+            "date": "2020-09-21",
+            "label": "Sep 21",
+            "change": -4.38,
+            "changePercent": -1.7344
+        },
+        {
+            "close": 254.75,
+            "volume": 30293103,
+            "date": "2020-09-22",
+            "label": "Sep 22",
+            "change": 6.6,
+            "changePercent": 2.6597
+        },
+        {
+            "close": 249.02,
+            "volume": 19641266,
+            "date": "2020-09-23",
+            "label": "Sep 23",
+            "change": -5.73,
+            "changePercent": -2.2493
+        },
+        {
+            "close": 249.53,
+            "volume": 20006750,
+            "date": "2020-09-24",
+            "label": "Sep 24",
+            "change": 0.51,
+            "changePercent": 0.2048
+        },
+        {
+            "close": 254.82,
+            "volume": 18351311,
+            "date": "2020-09-25",
+            "label": "Sep 25",
+            "change": 5.29,
+            "changePercent": 2.12
+        },
+        {
+            "close": 256.82,
+            "volume": 18826254,
+            "date": "2020-09-28",
+            "label": "Sep 28",
+            "change": 2,
+            "changePercent": 0.78
+        }
+    ]
+}
