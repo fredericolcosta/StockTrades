@@ -32,6 +32,7 @@ def save_stocks(url, params, username,password,address, port,database):
 
 
 if __name__ == "__main__":
+    #Load with your values
     load_dotenv()
     token = os.getenv("TOKEN")
     username = os.getenv("USERNAME")
