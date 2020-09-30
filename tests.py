@@ -2,7 +2,6 @@ from db.data_repository import DataRepository
 from api.data_extractor import DataExtractor
 
 
-#TODO Handle api and db exceptions 
 
 if __name__ == "__main__":
     url = 'https://cloud.iexapis.com/stable/stock/FB/batch'
