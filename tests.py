@@ -39,8 +39,9 @@ if __name__ == "__main__":
     address = os.getenv("ADDRESS")
     port = os.getenv("PORT")
     database = os.getenv("DATABASE")
-    url = 'https://cloud.iexapis.com/stable/stock/FB/batch'
     token = os.getenv("TOKEN")
+
+    url = 'https://cloud.iexapis.com/stable/stock/FB/batch'
     params = {'token':token,
     'types':'chart', 'range': '1m', 'last':10}
     
