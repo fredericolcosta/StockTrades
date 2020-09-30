@@ -50,7 +50,11 @@ class DataRepository:
     def get_stocks_info(self):
         self.database.show_stocks_info()
         
-
+    """
+    Closes connection to database, disposing engine
+    """
+    def close_connection(self):
+        self.database.close_conn()
 
         
 

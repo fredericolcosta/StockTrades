@@ -25,13 +25,13 @@ class DataExtractor:
             response = requests.get(self.url_request,params=self.params, timeout=5)
             response.raise_for_status()
         except requests.exceptions.HTTPError as err:
-            print ("HTTP Error:",err)
+            raise
         except requests.exceptions.ConnectionError as err:
-            print ("Connection Error:",err)
+            raise
         except requests.exceptions.Timeout as err:
-            print ("Timeout Error:",err)
+            raise
         except requests.exceptions.RequestException as err:
-            print ("Error:",err)
+            raise
         
         else:
             json_response = response.json()

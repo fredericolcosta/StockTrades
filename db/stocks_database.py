@@ -30,6 +30,12 @@ class StocksDatabase():
         self.Session.configure(bind=self.engine)
 
     """
+    Closes connection to database, disposing engine
+    """
+    def close_conn(self):
+        self.engine.dispose()
+
+    """
     Database initializer 
 
     Creates tables registed in Metadata
