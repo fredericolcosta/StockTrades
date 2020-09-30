@@ -28,6 +28,11 @@ class DataRepository:
 
     """
     Add stock information to database
+
+    Parameters: 
+    stocks_json (dict): stock info provided by API in JSON
+  
+    Returns: 
     """
     def add_stocks_info(self, stocks_json):
         stocks = []
