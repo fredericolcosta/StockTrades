@@ -1,4 +1,5 @@
-from sqlalchemy import *
+from abc import abstractclassmethod
+
 
 class Database:
     """ 
@@ -26,27 +27,17 @@ class Database:
         self.db_name = db
 
     """
-    Creates database connection
-    """
-    def create_conn(self):
-        pass
-
-    """
-    Closes database connection
-    """
-    def close_conn(self):
-        pass
-
-    """
     Initializes database(creates tables)
     """
+    @abstractclassmethod
     def initialize_db(self):
         pass
 
     """
     Add stock information to database
     """
-    def add_stock_info(self):
+    def add_stocks_info(self):
         pass
+        
 
     
