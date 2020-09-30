@@ -1,4 +1,4 @@
-from sqlalchemy import *
+from sqlalchemy import exc, create_engine
 from sqlalchemy.orm import sessionmaker
 from db.stock import Stock, Base
 
@@ -41,6 +41,15 @@ class StocksDatabase():
     def initialize_db(self):
         Base.metadata.create_all(self.engine)
 
+
+    """
+    Adds Mapped Objects 'Stocks' to database
+
+    Parameters: 
+    stocks (dict[]): list of stocks info provided by API 
+  
+    Returns: 
+    """
     def add_stocks(self, stocks):
         #Creates tables that do not exist
         self.initialize_db()
@@ -59,13 +68,15 @@ class StocksDatabase():
 
             #Adds or updates stock information
             session.merge(stock)
-            
+
         try:
             session.commit()
-        except:
+        except exc.SQLAlchemyError:
             session.rollback()
+            print("Error: There was a problem in adding info to database.\n Rolling back...")
             raise
-
+        else:
+            print("Success: Added stock information to database")
         
 
 

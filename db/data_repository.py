@@ -37,8 +37,7 @@ class DataRepository:
     def add_stocks_info(self, stocks_json):
         stocks = []
         for stock in stocks_json['chart']:
-            stocks.append(stock)
-        
+            stocks.append(stock) 
         self.database.add_stocks(stocks)
         
 
