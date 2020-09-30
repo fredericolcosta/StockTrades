@@ -39,6 +39,16 @@ class DataRepository:
         for stock in stocks_json['chart']:
             stocks.append(stock) 
         self.database.add_stocks(stocks)
+
+    """
+    Get stock information from database
+
+    Parameters: 
+  
+    Returns: 
+    """
+    def get_stocks_info(self):
+        self.database.show_stocks_info()
         
 
 

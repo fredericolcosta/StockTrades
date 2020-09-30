@@ -79,5 +79,26 @@ class StocksDatabase():
             print("Success: Added stock information to database")
         
 
+    """
+    Prints stock information from database
 
-    
+    Parameters: 
+  
+    Returns: 
+    """
+    def show_stocks_info(self):
+        #Fetches connection from pool
+        session = self.Session()
+
+        #Queries database for stock info
+        for added,date, open, close, high, low, volume, change, changePercent, label, ChangeOverTime in session.query(Stock.added,
+         Stock.date, Stock.open,
+            Stock.close, Stock.high, Stock.low, 
+             Stock.volume, Stock.change, Stock.changePercent, 
+             Stock.label, Stock.changeOverTime).order_by(Stock.added):
+             
+            stock_info = (added, date, open,
+             close, high, low, 
+             volume, change, changePercent, label, ChangeOverTime)
+        
+

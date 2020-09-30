@@ -12,4 +12,4 @@ if __name__ == "__main__":
     dt_repo = DataRepository("root","passroot321","localhost","3306","stock_trade")
     dt_repo.add_stocks_info(json_response)
 
-   
+    dt_repo.get_stocks_info()
