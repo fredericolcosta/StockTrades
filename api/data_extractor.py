@@ -45,5 +45,5 @@ if __name__ == "__main__":
 
     json_response = dt_ex.get_json_response()
     print(json_response)
-
+    
     

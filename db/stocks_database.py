@@ -1,23 +1,71 @@
 from sqlalchemy import *
-from db_config import Database
-from stock import Base
+from sqlalchemy.orm import sessionmaker
+from db.stock import Stock, Base
 
-class DatabaseAlchemy(Database):
+class StocksDatabase():
+    """
+    Database handler 
 
-    def __init__(self):
-        super().__init__()
-    
-    def create_conn(self):
-        self.engine = create_engine('mysql://{0}:{1}@{2}:{3}/{4}'.format(
-            self.username, 
-            self.password, 
-            self.address, 
-            self.port, 
-            self.db))
+    Creates connection and interface with database(Engine)
+    and defines Session factory class for new Session objects
+    to handle database
 
+    Parameters: 
+    username (string): username
+    password(string): password to access database
+    address(string): address of host
+    db(string): name of database schema
+  
+    Returns: 
+    """
+    def __init__(self, username, password, address, port, db):
+        self.engine = create_engine('mysql+mysqlconnector://{0}:{1}@{2}:{3}/{4}'.format(
+            username, 
+            password, 
+            address, 
+            port, 
+            db))
 
+        self.Session = sessionmaker(bind=self.engine)
+        self.Session.configure(bind=self.engine)
+
+    """
+    Database initializer 
+
+    Creates tables registed in Metadata
+
+    Parameters: 
+  
+    Returns: 
+    """
     def initialize_db(self):
         Base.metadata.create_all(self.engine)
+
+    def add_stocks(self, stocks):
+        #Creates tables that do not exist
+        self.initialize_db()
+
+        #Defines which information to fetch from json dict
+        stock_attributes = ('added','date', 'open', 'close', 'high', 'low', 'volume', 'change', 'changePercent', 'label', 'changeOverTime')
+        
+        #Retrieves a connection from pool of connections (Session)
+        session = self.Session()
+
+        #Goes through stock info on json object
+        for stock_info in stocks:
+            #Unpacks JSON stock info to Mapped Class 'Stock'
+            #filtering unnecessary data
+            stock = Stock(**{i: stock_info[i] for i in  stock_attributes if i in stock_info})
+
+            #Adds or updates stock information
+            session.merge(stock)
+            
+        try:
+            session.commit()
+        except:
+            session.rollback()
+            raise
+
         
 
 

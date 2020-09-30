@@ -1,15 +1,18 @@
-from abc import abstractclassmethod
 
 
-class Database:
+from abc import abstractmethod
+from db.stocks_database import StocksDatabase
+
+
+class DataRepository:
     """ 
-    Database abstract class. 
+    Data repository. 
   
     Defines methods to configure and handle database
     """
     
     """
-    Configures database access info
+    Configures database access info 
 
     Parameters: 
     username (string): username
@@ -20,24 +23,21 @@ class Database:
     Returns: 
 
     """
-    def __init__(self, username, password, address, db):
-        self.username = username
-        self.password = password
-        self.address = address 
-        self.db_name = db
-
-    """
-    Initializes database(creates tables)
-    """
-    @abstractclassmethod
-    def initialize_db(self):
-        pass
+    def __init__(self, username, password, address, port, db):
+        self.database = StocksDatabase(username,password,address, port,db)
 
     """
     Add stock information to database
     """
-    def add_stocks_info(self):
-        pass
+    def add_stocks_info(self, stocks_json):
+        stocks = []
+        for stock in stocks_json['chart']:
+            stocks.append(stock)
+        
+        self.database.add_stocks(stocks)
+        
+
+
         
 
     
