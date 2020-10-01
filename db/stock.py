@@ -5,6 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class Stock(Base):
     """
     Declarative base class 'Stock' to map 
@@ -12,7 +13,8 @@ class Stock(Base):
     """
     __tablename__ = 'stocks'
 
-    added = Column(TIMESTAMP(timezone=False), nullable=False, default=datetime.now())
+    added = Column(TIMESTAMP(timezone=False),
+                   nullable=False, default=datetime.now())
     date = Column(Date, primary_key=True)
     open = Column(DECIMAL(12, 2))
     close = Column(DECIMAL(12, 2))
@@ -22,8 +24,4 @@ class Stock(Base):
     change = Column(DECIMAL(5, 2))
     changePercent = Column(DECIMAL(9, 6))
     label = Column(String(length=10))
-    changeOverTime = Column(DECIMAL(9,8))
-
-    
-
- 
+    changeOverTime = Column(DECIMAL(9, 8))

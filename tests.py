@@ -2,16 +2,16 @@ from datetime import datetime
 from db.data_repository import DataRepository
 from api.data_extractor import DataExtractor
 import logging
-from dotenv import load_dotenv
-import os
+from settings import *
 
 
 def log_error(type):
-        logging.basicConfig(filename='errors.log',level=logging.DEBUG)
-        logging.info(datetime.now())
-        logging.exception(type)
+    logging.basicConfig(filename='errors.log', level=logging.DEBUG)
+    logging.info(datetime.now())
+    logging.exception(type)
 
-def save_stocks(url, params, username,password,address, port,database):
+
+def save_stocks(url, params, username, password, address, port, database):
     try:
         dt_ex = DataExtractor(url, params)
         json_response = dt_ex.get_json_response()
@@ -22,7 +22,8 @@ def save_stocks(url, params, username,password,address, port,database):
     else:
         dt_repo = None
         try:
-            dt_repo = DataRepository(username,password,address, port,database)
+            dt_repo = DataRepository(
+                username, password, address, port, database)
             dt_repo.add_stocks_info(json_response)
         except Exception as e:
             print("There was an error acessing database:", e)
@@ -31,21 +32,11 @@ def save_stocks(url, params, username,password,address, port,database):
             dt_repo.close_connection()
 
 
+# TODO Add to settings.py
 if __name__ == "__main__":
-    #Load with your values
-    load_dotenv()
-    token = os.getenv("TOKEN")
-    username = os.getenv("USERNAME")
-    password = os.getenv("PASSWORD")
-    address = os.getenv("ADDRESS")
-    port = os.getenv("PORT")
-    database = os.getenv("DATABASE")
-    token = os.getenv("TOKEN")
-
     url = 'https://cloud.iexapis.com/stable/stock/FB/batch'
-    params = {'token':token,
-    'types':'chart', 'range': '1m', 'last':10}
-    
-    save_stocks(url, params, username, password, address, port, database)
+    params = {'token': TOKEN,
+              'types': 'chart', 'range': '1m', 'last': 10}
 
-
+    # Load with your values
+    save_stocks(url, params, USERNAME, PASSWORD, ADDRESS, PORT, DATABASE)

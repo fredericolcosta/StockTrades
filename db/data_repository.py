@@ -7,10 +7,10 @@ from db.stocks_database import StocksDatabase
 class DataRepository:
     """ 
     Data repository. 
-  
+
     Defines methods to configure and handle database
     """
-    
+
     """
     Configures database access info 
 
@@ -23,8 +23,9 @@ class DataRepository:
     Returns: 
 
     """
+
     def __init__(self, username, password, address, port, db):
-        self.database = StocksDatabase(username,password,address, port,db)
+        self.database = StocksDatabase(username, password, address, port, db)
 
     """
     Add stock information to database
@@ -34,10 +35,11 @@ class DataRepository:
   
     Returns: 
     """
+
     def add_stocks_info(self, stocks_json):
         stocks = []
         for stock in stocks_json['chart']:
-            stocks.append(stock) 
+            stocks.append(stock)
         self.database.add_stocks(stocks)
 
     """
@@ -47,15 +49,13 @@ class DataRepository:
   
     Returns: 
     """
+
     def get_stocks_info(self):
         self.database.show_stocks_info()
-        
+
     """
     Closes connection to database, disposing engine
     """
+
     def close_connection(self):
         self.database.close_conn()
-
-        
-
-    
